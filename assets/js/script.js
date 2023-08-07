@@ -9,7 +9,7 @@
 //create an object weather with a getWeather method. The getWeather method will fetch weather data
 
 let weather = {
-  appKey: "c27c727042da1e145bf14c1d47031e5d",
+  // appKey: "c27c727042da1e145bf14c1d47031e5d",
   getWeather: function (city) {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -48,7 +48,8 @@ let weather = {
     this.getWeather(document.querySelector("#citySearch").value);
   }
 };
-document.querySelector(".search").addEventListener("click", function(){
+document.querySelector(".search").addEventListener("click", function(event){
+  event.preventDefault();
   weather.submit();
 })
 
