@@ -1,35 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Weather App</title>
+  <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 <body>
-    
-        <div class="searchBox">
-          <div class="search">
-            <input type="text" class="search-bar" placeholder="Search">
-            <button> <p>Search</p> <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em"
-                width="3.5em" >
-                
-            </svg></button>
-          </div>
-          <div class="weather loading">
-                <h2 class="city"> City  </h2>
-                <h1 class="temp"> Temperature  </h1>
-                <div class="flex">
-                <img src="  " alt=" Weather Icon " class="icon" />
-                <div class="description">   </div>
-                </div>
-                <div class="humidity"> humidity  </div>
-                <div class="wind"> Wind Speed  </div>
-          </div>
-        </div>
-    
+  <h1>Weather App</h1>
+  <form id="city-form">
+    <label for="city-search">City:</label>
+    <input type="text" id="city-search" name="city-search">
+    <button>Search</button>
+  </form>
+  
+  <section>
+    <img src="" alt="" class="icon">
+    <div class="date">Date: 8/7/2023</div>
+    <div class="temp">Temperature: </div>
+    <div class="wind">Wind: </div>
+    <div class="humidity">Humidity: </div>
 
-    <script src="assets/js/script.js"></script>
+  </section>
+  <div id="weather"></div>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
+
+
