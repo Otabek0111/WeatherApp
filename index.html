@@ -8,21 +8,23 @@
 </head>
 <body>
   <h1>Weather App</h1>
+  <!-- search form -->
   <form id="city-form">
-    <label for="city-search">City:</label>
-    <input type="text" id="city-search" name="city-search">
-    <button>Search</button>
+    <label for="citySearch">City:</label>
+    <input type="text" id="citySearch" name="citySearch">
+    <button class="search">Search</button>
   </form>
-  
+  <!-- weather display  -->
   <section>
-    <img src="" alt="" class="icon">
-    <div class="date">Date: 8/7/2023</div>
+    <div class="date">Date</div>
+    <div class="city"></div>
     <div class="temp">Temperature: </div>
+    <div class="description">Clear </div>
+    <img class="icon" src="" alt="" >
     <div class="wind">Wind: </div>
     <div class="humidity">Humidity: </div>
 
   </section>
-  <div id="weather"></div>
   <script src="assets/js/script.js"></script>
 </body>
 </html>

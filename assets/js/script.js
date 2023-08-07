@@ -1,64 +1,3 @@
-// document.querySelector("#city-form").addEventListener("submit", handleFormSubmit)
-// const city = document.querySelector("#city-form")
-
-// window.addEventListener('load', () => {
-//     const apiKey = '39e86af03b21747f95f671b62ce778c7'; // Replace with your actual API key
-//     // Replace with the desired city
-//     const weatherDiv = document.getElementById('weather');
-
-//     // Fetch weather data from the API
-//     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`)
-//       .then(function(response){
-//         console.log(response)
-//         console.log(response.status)
-//         return response.json()
-//       })
-//       .then(data => {
-//         // Get the forecast list
-//         console.log(data)
-//         if(data.message === "city not found"){
-//             weather.innerHTML = "Please enter a valid city!"
-//             return
-//         }
-//         const forecastList = data.list;
-
-//         // Loop through the forecast data and display the results
-//         forecastList.forEach(function(forecast) {
-//           const dateTime = new Date(forecast.dt_txt);
-
-//           const date = dateTime.toDateString();
-//           const time = dateTime.toLocaleTimeString();
-//           const temperature = forecast.main.temp;
-//           const description = forecast.weather[0].description;
-
-//           const forecastItem = document.createElement('div');
-//           forecastItem.classList.add('forecast-item');
-
-//           forecastItem.innerHTML = `
-//             <p>Date: ${date}</p>
-//             <p>Date: ${date}</p>
-//             <p>Time: ${time}</p>
-//             <p>Temperature: ${temperature} &#8451;</p>
-//             <p>Description: ${description}</p>
-//           `;
-
-//           weatherDiv.appendChild(forecastItem);
-//         });
-//       })
-//       .catch(error => {
-//         console.log('Error fetching weather data:', error);
-//         weatherDiv.innerHTML = 'Error fetching weather data';
-//       });
-//   });
-
-//   function handleFormSubmit(event){
-//     event.preventDefault()
-//     //get my input
-
-//     var cityInput = document.getElementById("city-search").value
-//     console.log(cityInput)
-
-//   }
 
 // Need FOrm INputs  ==> HTML FORM with input (text) and it needs an id
 // KNow What the value of the input is in JS (querySelector for the ID)
@@ -68,6 +7,7 @@
 //If it's invalid, I don't want to fetchmyapi
 
 //create an object weather with a getWeather method. The getWeather method will fetch weather data
+
 let weather = {
   appKey: "c27c727042da1e145bf14c1d47031e5d",
   getWeather: function (city) {
@@ -77,17 +17,40 @@ let weather = {
         "&units=metric&appid=c27c727042da1e145bf14c1d47031e5d"
     )
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => this.showData(data))
       // data.
       .catch(function (error) {
         console.log(error);
       });
   },
   showData: function (data) {
+    const date = new Date();
+    console.log(date);
     const { name } = data;
-    const {  } = data;
+    const { temp, humidity } = data.main;
+    const { speed } = data.wind; 
+    const { icon, description } =data.weather[0];
+    console.log(name, temp, humidity,speed,description,icon);
+    console.log(data);
 
+    // const desc = description.charAt(0).toUpperCase()+ word.slice(1);
+
+    document.querySelector(".city").innerHTML = `Weather in ${name} `; 
+    document.querySelector(".temp").innerHTML = `Temperature: ${temp} C `;
+    document.querySelector(".description").innerHTML = `${description} `;
+    document.querySelector(".wind").innerHTML = `Wind Speed: ${speed} m/s`;
+    document.querySelector(".humidity").innerHTML = `Humidity: ${humidity}%`;
+    document.querySelector(".icon").src = `http://openweathermap.org/img/w/${icon}.png`;
+    document.querySelector(".icon").alt = `${description}`
+    document.querySelector(".date").innerHTML = date;
   },
+  submit : function () {
+    this.getWeather(document.querySelector("#citySearch").value);
+  }
 };
+document.querySelector(".search").addEventListener("click", function(){
+  weather.submit();
+})
 
-weather.getWeather("samarkand");
+
+
