@@ -4,6 +4,9 @@
 
 The WeatherApp is a user-friendly web application that enables users to access real-time weather information using the OpenWeatherMap API. The motivation behind this project stems from the need for a reliable and visually appealing weather app that allows users to quickly obtain accurate weather forecasts for different locations. The primary goal was to create an interface that is both intuitive and aesthetically pleasing, enhancing the overall weather-checking experience.
 
+## Deployment 
+https://otabek0111.github.io/WeatherApp/ 
+
 ## Table of Contents
 
 - [Installation](#installation)
