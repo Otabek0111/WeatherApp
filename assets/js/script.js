@@ -39,8 +39,10 @@ let weather = {
     // const desc = description.charAt(0).toUpperCase()+ word.slice(1);
 
     document.querySelector(".city").innerHTML = `Weather in ${name} `;
-    document.querySelector(".temp").innerHTML = `Temperature: ${temp} F° `;
-    document.querySelector(".description").innerHTML = `${description} `;
+    document.querySelector(".temp").innerHTML = `Temperature: ${temp} F `;
+    document.querySelector(
+      ".description"
+    ).innerHTML = `Forecast: ${description} `;
     document.querySelector(".wind").innerHTML = `Wind Speed: ${speed} m/s`;
     document.querySelector(".humidity").innerHTML = `Humidity: ${humidity}%`;
     document.querySelector(
@@ -125,16 +127,16 @@ const weatherCast = {
 
     document.querySelector(
       ".forecastTemp2"
-    ).innerHTML = `Temperature: ${temp2} F°`;
+    ).innerHTML = `Temperature: ${temp2} F `;
     document.querySelector(
       ".forecastTemp3"
-    ).innerHTML = `Temperature: ${temp3} F°`;
+    ).innerHTML = `Temperature: ${temp3} F `;
     document.querySelector(
       ".forecastTemp4"
-    ).innerHTML = `Temperature: ${temp4} F°`;
+    ).innerHTML = `Temperature: ${temp4} F `;
     document.querySelector(
       ".forecastTemp5"
-    ).innerHTML = `Temperature: ${temp5} F°`;
+    ).innerHTML = `Temperature: ${temp5} F `;
 
     document.querySelector(
       ".forecastDescription2"
@@ -192,10 +194,21 @@ const weatherCast = {
     this.forecast(document.querySelector("#citySearch").value);
 
     const city = document.querySelector("#citySearch").value;
-    localStorage.setItem("lastCity", city);
 
-  const value = localStorage.getItem("lastCity");
-  document.querySelector(".cityList").innerHTML = `${value}`;
+    const value = JSON.parse(localStorage.getItem("lastCity")) || [];
+    value.push(city);
+    localStorage.setItem("lastCity", JSON.stringify(value));
+
+  
+    console.log(value[0]);
+    document.querySelector(".cityList1").innerHTML = `${value[0]}`;
+    document.querySelector(".cityList2").innerHTML = `${value[2]}`;
+    document.querySelector(".cityList3").innerHTML = `${value[3]}`;
+    document.querySelector(".cityList4").innerHTML = `${value[4]}`;
+    document.querySelector(".cityList5").innerHTML = `${value[5]}`;
+
+    //   localStorage.setItem("lastCity", JSON.stringify(value));
+    // const value = localStorage.getItem("lastCity");
   },
 };
 
