@@ -4,63 +4,73 @@
   <title>Weather App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
 </head>
 <body>
-  <h1>Weather App</h1>
   <!-- search form -->
-  <form id="city-form">
-    <label for="citySearch">City:</label>
+  <form id="cityForm">
+    <h1>Weather App</h1>
+    <label class="citySearch">City:</label>
     <input type="text" id="citySearch" name="citySearch">
     <button class="search">Search</button>
-  </form>
-  <!-- weather display for the day -->
-  <section>
-    <div class="date">Date</div>
     <div class="city"></div>
-    <div class="temp">Temperature: </div>
-    <div class="description">Clear </div>
-    <img class="icon" src="" alt="img" >
-    <div class="wind">Wind: </div>
-    <div class="humidity">Humidity: </div><br>
-  </section>
-  <!-- 5 day forcast  -->
-  <section>
-    <div class="forecastCity2">2 day cast Date</div>
-    <div class="forecastTemp2">2 day cast Date Temperature: </div>
-    <div class="forecastDescription2"> 2 day cast Date Clear </div>
-    <img class="forecastIcon2" src="" alt="img" >
-    <div class="forecastWind2">2 day cast Date Wind: </div>
-    <div class="forecastHumidity2">2 day cast Date Humidity: </div><br>
-  </section>
+  </form>
+  <main class=" display hide">
+  <!-- weather display for the day -->
+      <section class="boxOne">
+        <div class="date">Date</div>
+        <!-- <div class="city"></div> -->
+        <div class="temp">Temperature: </div>
+        <div class="description">Clear </div>
+        <img class="icon" src="" alt="img" >
+        <div class="wind">Wind: </div>
+        <div class="humidity">Humidity: </div><br>
+      </section>
+      <!-- 5 day forcast  -->
+      <section class="boxOne">
+        <div class="forecastCity2">2 day cast Date</div>
+        <div class="forecastTemp2">2 day cast Date Temperature: </div>
+        <div class="forecastDescription2"> 2 day cast Date Clear </div>
+        <img class="forecastIcon2" src="" alt="img" >
+        <div class="forecastWind2">2 day cast Date Wind: </div>
+        <div class="forecastHumidity2">2 day cast Date Humidity: </div><br>
+      </section>
 
-  <section>
-    <div class="forecastCity3">3 day cast Date</div>
-    <div class="forecastTemp3">3 day cast Date Temperature: </div>
-    <div class="forecastDescription3"> 3 day cast Date Clear </div>
-    <img class="forecastIcon3" src="" alt="img" >
-    <div class="forecastWind3">3 day cast Date Wind: </div>
-    <div class="forecastHumidity3">3 day cast Date Humidity: </div><br>
-  </section>
+      <section class="boxOne">
+        <div class="forecastCity3">3 day cast Date</div>
+        <div class="forecastTemp3">3 day cast Date Temperature: </div>
+        <div class="forecastDescription3"> 3 day cast Date Clear </div>
+        <img class="forecastIcon3" src="" alt="img" >
+        <div class="forecastWind3">3 day cast Date Wind: </div>
+        <div class="forecastHumidity3">3 day cast Date Humidity: </div><br>
+      </section>
 
-  <section>
-    <div class="forecastCity4">4 day cast Date</div>
-    <div class="forecastTemp4">4 day cast Date Temperature: </div>
-    <div class="forecastDescription4"> 4 day cast Date Clear </div>
-    <img class="forecastIcon4" src="" alt="img" >
-    <div class="forecastWind4">4 day cast Date Wind: </div>
-    <div class="forecastHumidity4">4 day cast Date Humidity: </div><br>
-  </section>
+      <section class="boxOne">
+        <div class="forecastCity4">4 day cast Date</div>
+        <div class="forecastTemp4">4 day cast Date Temperature: </div>
+        <div class="forecastDescription4"> 4 day cast Date Clear </div>
+        <img class="forecastIcon4" src="" alt="img" >
+        <div class="forecastWind4">4 day cast Date Wind: </div>
+        <div class="forecastHumidity4">4 day cast Date Humidity: </div><br>
+      </section>
 
-  <section>
-    <div class="forecastCity5">5 day cast Date</div>
-    <div class="forecastTemp5">5 day cast Date Temperature: </div>
-    <div class="forecastDescription5"> 5 day cast Date Clear </div>
-    <img class="forecastIcon5" src="" alt="img" >
-    <div class="forecastWind5">5 day cast Date Wind: </div>
-    <div class="forecastHumidity5">5 day cast Date Humidity: </div><br>
-  </section>
+      <section class="boxOne"> 
+        <div class="forecastCity5">5 day cast Date</div>
+        <div class="forecastTemp5">5 day cast Date Temperature: </div>
+        <div class="forecastDescription5"> 5 day cast Date Clear </div>
+        <img class="forecastIcon5" src="" alt="img" >
+        <div class="forecastWind5">5 day cast Date Wind: </div>
+        <div class="forecastHumidity5">5 day cast Date Humidity: </div><br>
+      </section>
 
+      <section>
+        <ul class="cityList">
+        </ul>
+      </section>
+    </main>
   <script src="assets/js/script.js"></script>
 </body>
 </html>

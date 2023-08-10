@@ -13,15 +13,14 @@ let weather = {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
         city +
-        "&units=metric&appid=c27c727042da1e145bf14c1d47031e5d&cnt=5"
+        "&units=imperial&appid=c27c727042da1e145bf14c1d47031e5d&cnt=5"
     )
       .then((response) => response.json())
       .then((data) => this.showData(data))
       // data.
       .catch(function (error) {
         console.log(error);
-      });    
-
+      });
   },
   showData: function (data) {
     const date = new Date().toLocaleDateString("en-us", {
@@ -40,7 +39,7 @@ let weather = {
     // const desc = description.charAt(0).toUpperCase()+ word.slice(1);
 
     document.querySelector(".city").innerHTML = `Weather in ${name} `;
-    document.querySelector(".temp").innerHTML = `Temperature: ${temp} C `;
+    document.querySelector(".temp").innerHTML = `Temperature: ${temp} F° `;
     document.querySelector(".description").innerHTML = `${description} `;
     document.querySelector(".wind").innerHTML = `Wind Speed: ${speed} m/s`;
     document.querySelector(".humidity").innerHTML = `Humidity: ${humidity}%`;
@@ -62,7 +61,7 @@ const weatherCast = {
       // "https://api.openweathermap.org/data/2.5/forecast?q=brooklyn&units=metric&appid=c27c727042da1e145bf14c1d47031e5d&cnt=40"
       "https://api.openweathermap.org/data/2.5/forecast?q=" +
         city +
-        "&units=metric&appid=c27c727042da1e145bf14c1d47031e5d&cnt=30"
+        "&units=imperial&appid=c27c727042da1e145bf14c1d47031e5d&cnt=30"
     )
       .then((response) => response.json())
       .then((data) => this.showCast(data))
@@ -74,6 +73,7 @@ const weatherCast = {
   },
   showCast: function (data) {
     console.log(data);
+
     const { dt_txt: day2 } = data.list[5];
     const { dt_txt: day3 } = data.list[13];
     const { dt_txt: day4 } = data.list[21];
@@ -125,29 +125,29 @@ const weatherCast = {
 
     document.querySelector(
       ".forecastTemp2"
-    ).innerHTML = `Temperature: ${temp2}`;
+    ).innerHTML = `Temperature: ${temp2} F°`;
     document.querySelector(
       ".forecastTemp3"
-    ).innerHTML = `Temperature: ${temp3}`;
+    ).innerHTML = `Temperature: ${temp3} F°`;
     document.querySelector(
       ".forecastTemp4"
-    ).innerHTML = `Temperature: ${temp4}`;
+    ).innerHTML = `Temperature: ${temp4} F°`;
     document.querySelector(
       ".forecastTemp5"
-    ).innerHTML = `Temperature: ${temp5}`;
+    ).innerHTML = `Temperature: ${temp5} F°`;
 
     document.querySelector(
       ".forecastDescription2"
-    ).innerHTML = `${description2}`;
+    ).innerHTML = `Forecast: ${description2}`;
     document.querySelector(
       ".forecastDescription3"
-    ).innerHTML = `${description3}`;
+    ).innerHTML = `Forecast: ${description3}`;
     document.querySelector(
       ".forecastDescription4"
-    ).innerHTML = `${description4}`;
+    ).innerHTML = `Forecast: ${description4}`;
     document.querySelector(
       ".forecastDescription5"
-    ).innerHTML = `${description5}`;
+    ).innerHTML = `Forecast: ${description5}`;
 
     document.querySelector(
       ".forecastIcon2"
@@ -162,28 +162,53 @@ const weatherCast = {
       ".forecastIcon5"
     ).src = `http://openweathermap.org/img/w/${icon5}.png`;
 
-    document.querySelector(".forecastWind2").innerHTML = `${wind2} m/s`;
-    document.querySelector(".forecastWind3").innerHTML = `${wind3} m/s`;
-    document.querySelector(".forecastWind4").innerHTML = `${wind4} m/s`;
-    document.querySelector(".forecastWind5").innerHTML = `${wind5} m/s`;
+    document.querySelector(
+      ".forecastWind2"
+    ).innerHTML = `Wind Speed: ${wind2} m/h`;
+    document.querySelector(
+      ".forecastWind3"
+    ).innerHTML = `Wind Speed: ${wind3} m/h`;
+    document.querySelector(
+      ".forecastWind4"
+    ).innerHTML = `Wind Speed: ${wind4} m/h`;
+    document.querySelector(
+      ".forecastWind5"
+    ).innerHTML = `Wind Speed: ${wind5} m/h`;
 
-    document.querySelector(".forecastHumidity2").innerHTML = `${humidity2}%`;
-    document.querySelector(".forecastHumidity3").innerHTML = `${humidity3}%`;
-    document.querySelector(".forecastHumidity4").innerHTML = `${humidity4}%`;
-    document.querySelector(".forecastHumidity5").innerHTML = `${humidity5}%`;
+    document.querySelector(
+      ".forecastHumidity2"
+    ).innerHTML = `Humidity ${humidity2}%`;
+    document.querySelector(
+      ".forecastHumidity3"
+    ).innerHTML = `Humidity ${humidity3}%`;
+    document.querySelector(
+      ".forecastHumidity4"
+    ).innerHTML = `Humidity ${humidity4}%`;
+    document.querySelector(
+      ".forecastHumidity5"
+    ).innerHTML = `Humidity ${humidity5}%`;
   },
   submit: function () {
     this.forecast(document.querySelector("#citySearch").value);
-    // this.showCast(document.querySelector("#citySearch").value);
+
+    const city = document.querySelector("#citySearch").value;
+    localStorage.setItem("lastCity", city);
+
+  const value = localStorage.getItem("lastCity");
+  document.querySelector(".cityList").innerHTML = `${value}`;
   },
 };
 
 document.querySelector(".search").addEventListener("click", function (event) {
   event.preventDefault();
+  const display = document.querySelector(".hide");
+  display.style.display = "block";
   weatherCast.submit();
 });
 
 document.querySelector(".search").addEventListener("click", function (event) {
   event.preventDefault();
+  const display = document.querySelector(".hide");
+  display.style.display = "inline-flex";
   weather.submit();
 });
