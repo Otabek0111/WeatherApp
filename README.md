@@ -1,11 +1,13 @@
 # WeatherApp
 
+## Deployment
+
+https://otabek0111.github.io/WeatherApp/
+
 ## Description
 
-The WeatherApp is a user-friendly web application that enables users to access real-time weather information using the OpenWeatherMap API. The motivation behind this project stems from the need for a reliable and visually appealing weather app that allows users to quickly obtain accurate weather forecasts for different locations. The primary goal was to create an interface that is both intuitive and aesthetically pleasing, enhancing the overall weather-checking experience.
 
-## Deployment 
-https://otabek0111.github.io/WeatherApp/ 
+The WeatherApp redefines weather information accessibility by providing users with an intuitive and visually captivating web platform. By harnessing the power of the OpenWeatherMap API, this innovative application offers up-to-the-minute weather updates for diverse locations. Motivated by the quest for reliability and an engaging user experience, the project envisions a seamless interaction that empowers users to effortlessly retrieve precise weather forecasts. Through a harmonious blend of design and functionality, the WeatherApp elevates the act of checking weather conditions into an enriching and immersive journey.
 
 ## Table of Contents
 
@@ -36,7 +38,14 @@ Once you've opened the WeatherApp, you can:
 
 ##
 
-![WeatherApp Screenshot](./assets/css/Demo.png)
+![WeatherApp Screenshot](./assets/favicon_io/ss1.png)
+
+
+![WeatherApp Screenshot](./assets/favicon_io/ss2.png)
+
+
+![WeatherApp Screenshot](./assets/favicon_io/ss3.png)
+
 
 ## Credits
 
