@@ -1,0 +1,176 @@
+* {
+  font-family: "Quicksand", sans-serif;
+}
+body {
+  background-image: url("../assets/favicon_io/bg...avif");
+  background-size: cover; /* This will cover the entire element without distortion */
+  background-position: center; /* Center the image within the element */
+  width: 100%;
+  aspect-ratio: 16/9;
+  color: rgb(19, 30, 29);
+  margin: 0;
+  padding: 10px;
+  overflow-x: hidden;
+}
+
+.appContainer {
+  width: 100vw;
+  height: 100vh;
+}
+.hidden {
+  display: none !important;
+}
+
+:root {
+  --main-color: #007bff;
+  --background-color: rgba(245, 222, 179, 0.6);
+}
+.logo {
+  height: 100px;
+  width: auto;
+}
+.name {
+  font-size: 38px;
+}
+.input {
+  padding: 1px 10px 10px 10px;
+  text-align: left;
+  font-size: 28px;
+}
+.citySearch {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--background-color);
+  color: black;
+}
+
+.citySearch::placeholder {
+  color: black;
+}
+
+.citySearch,
+.citySearch::placeholder {
+  height: 28px;
+}
+.searchHistory {
+  list-style: none;
+  display: inline-block;
+}
+.mainBox {
+  text-align: center;
+  font-size: 28px;
+  border-style: solid;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+  padding: 25px;
+  width: 350px;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  background-color: rgba(245, 222, 179, 0.2);
+  border-radius: 10%;
+  /* Add box shadow */
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.7);
+  display: inline flow-root list-item;
+}
+
+.forecastSection {
+  /* Style for the new section */
+  padding: 1px; /* Add desired padding */
+  background-color: #f5f5f5;
+}
+
+.forecastDisplay {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* Add other flex-related properties if needed */
+}
+.error {
+  padding: 10px;
+}
+.forecastList {
+  display: flex;
+  flex-direction: row;
+}
+.forecastItem {
+  flex-direction: row;
+  margin: 10px 35px 35px 35px;
+  padding: 25px 25px;
+  border-bottom-style: solid;
+  border-bottom-width: 8px;
+  border-right-style: solid;
+  border-right-width: 6px;
+  background-color: rgba(245, 222, 179, 0.6);
+  border-radius: 10%;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--background-color);
+}
+button:hover {
+  background-color: #6888a3;
+}
+/* Base Button Style */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--background-color) 0.3s, color 0.3s;
+}
+.searchButton {
+  background-color: var(--background-color);
+  color: black;
+  height: 44px;
+  border-radius: 30%;
+}
+.searchButton:hover {
+  background-color: #555e66;
+}
+
+@media screen and (max-width: 600px) {
+  .mainBox {
+    font-size: 18px;
+    max-width: 90%; /* Adjust for better fit on smaller screens */
+    margin: 10px auto;
+  }
+  body {
+    font-size: 16px;
+  }
+  .citySearch {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .button {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+  .searchButton {
+    height: auto;
+    border-radius: 5px;
+    padding: 12px 20px;
+  }
+  .forecastItem {
+    padding: 15px 20px;
+    margin: 10px;
+    border-bottom-width: 6px;
+    border-right-width: 4px;
+  }
+  .forecastDisplay {
+    flex-direction: column;
+  }
+  .forecastList {
+    flex-direction: column;
+  }
+}

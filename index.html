@@ -1,85 +1,68 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Weather App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Application</title>
+    <link
+      rel="icon"
+      href="assets/favicon_io/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/a4bf4435c2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-</head>
-<body>
-  <!-- search form -->
-  <form id="cityForm">
-    <h1>Weather App</h1>
-    <label class="citySearch">City:</label>
-    <input type="text" id="citySearch" name="citySearch">
-    <button class="search">Search</button>
-    <div class="city"></div>
-  </form>
-  <main class=" display hide">
-  <!-- weather display for the day -->
-      <section class="boxOne">
-        <div class="date">Date</div>
-        <!-- <div class="city"></div> -->
-        <div class="temp">Temperature: </div>
-        <div class="description">Clear </div>
-        <img class="icon" src="" alt="img" >
-        <div class="wind">Wind: </div>
-        <div class="humidity">Humidity: </div><br>
-      </section>
-      <!-- 5 day forcast  -->
-      <section class="boxOne">
-        <div class="forecastCity2">2 day cast Date</div>
-        <div class="forecastTemp2">2 day cast Date Temperature: </div>
-        <div class="forecastDescription2"> 2 day cast Date Clear </div>
-        <img class="forecastIcon2" src="" alt="img" >
-        <div class="forecastWind2">2 day cast Date Wind: </div>
-        <div class="forecastHumidity2">2 day cast Date Humidity: </div><br>
-      </section>
+  <body>
+    <section class="appContainer">
+      <form class="input" method="get">
+        <p>
+          <img
+            class="logo"
+            src="./assets/favicon_io/weather-app(1).png"
+            alt=""
+          />
+          Weather App
+        </p>
+        <p>
+          City:
+          <input
+            class="citySearch"
+            type="text"
+            value=""
+            placeholder="City Name"
+          />
+          <button class="searchButton button" type="button">
+            <i class="fas fa-search"></i>
+            <!-- Use the FontAwesome class for the search icon -->
+          </button>
+        </p>
 
-      <section class="boxOne">
-        <div class="forecastCity3">3 day cast Date</div>
-        <div class="forecastTemp3">3 day cast Date Temperature: </div>
-        <div class="forecastDescription3"> 3 day cast Date Clear </div>
-        <img class="forecastIcon3" src="" alt="img" >
-        <div class="forecastWind3">3 day cast Date Wind: </div>
-        <div class="forecastHumidity3">3 day cast Date Humidity: </div><br>
-      </section>
+        <div class="error"></div>
+      </form>
 
-      <section class="boxOne">
-        <div class="forecastCity4">4 day cast Date</div>
-        <div class="forecastTemp4">4 day cast Date Temperature: </div>
-        <div class="forecastDescription4"> 4 day cast Date Clear </div>
-        <img class="forecastIcon4" src="" alt="img" >
-        <div class="forecastWind4">4 day cast Date Wind: </div>
-        <div class="forecastHumidity4">4 day cast Date Humidity: </div><br>
-      </section>
+      <head>
+        <div class="mainBox hidden">
+          <div class="city"></div>
+          <div class="date"></div>
+          <div class="temp"></div>
+          <div class="description"></div>
+          <img class="icon" src="" alt="" />
+          <div class="wind"></div>
+          <div class="humidity"></div>
+        </div>
+        <ul class="searchHistory"></ul>
 
-      <section class="boxOne"> 
-        <div class="forecastCity5">5 day cast Date</div>
-        <div class="forecastTemp5">5 day cast Date Temperature: </div>
-        <div class="forecastDescription5"> 5 day cast Date Clear </div>
-        <img class="forecastIcon5" src="" alt="img" >
-        <div class="forecastWind5">5 day cast Date Wind: </div>
-        <div class="forecastHumidity5">5 day cast Date Humidity: </div><br/>
-      </section>
+        <div class="forecastDisplay"></div>
 
-      <section class="cityList">
-        
-          <botton class="cityList1"></botton>        
+        <div class="savedSearches"></div>
+      </head>
+    </section>
+  </body>
 
-          <botton class="cityList2"></botton>
-          <botton class="cityList3"></botton>
-          <botton class="cityList4"></botton>
-          <botton class="cityList5"></botton>
-
-        
-      </section>
-    </main>
-  <script src="assets/js/script.js"></script>
-</body>
+  <script src="assets/script.js"></script>
 </html>
-
-
