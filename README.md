@@ -30,6 +30,9 @@ To run the WeatherApp locally, follow these steps:
 
 ## Usage
 
+## Demo Video
+Watch the demo video: [Demo Video](https://watch.screencastify.com/v/CdW3NPFWS47TfTC68apv) 
+
 Once you've opened the WeatherApp, you can:
 
 - Enter the name of a city in the search bar to retrieve the current weather details for that location.
