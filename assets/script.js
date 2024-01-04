@@ -36,15 +36,15 @@ const weather = {
     // Updated the weather display elements
     document.querySelector(".date").innerHTML = `${date}`;
     document.querySelector(".city").innerHTML = `Weather in ${name}`;
-    document.querySelector(".temp").innerHTML = `Temperature: ${Math.round(temp)} °F`;
+    document.querySelector(".temp").innerHTML = `Temperature ${Math.round(temp)} °F`;
     document.querySelector(
       ".description"
-    ).innerHTML = `Forecast: ${description}`;
-    document.querySelector(".wind").innerHTML = `Wind Speed: ${Math.round(speed)} mph`;
+    ).innerHTML = `${description}`;
+    document.querySelector(".wind").innerHTML = `Wind ${Math.round(speed)} mph`;
     document.querySelector(
       ".icon"
     ).src = `http://openweathermap.org/img/w/${icon}.png`;
-    document.querySelector(".humidity").innerHTML = `Humidity: ${Math.round(humidity)}%`;
+    document.querySelector(".humidity").innerHTML = `Humidity ${Math.round(humidity)}%`;
   },
 
   displayForecast: function (data) {
@@ -52,9 +52,11 @@ const weather = {
 
     const forecastDisplay = document.querySelector(".forecastDisplay");
     forecastDisplay.innerHTML = `
-      <h2 class="name">5-Day Forecast for ${data.city.name}</h2>
+      <div class="name"> 
+      <h2 class="name1">5-Day Forecast for ${data.city.name}</h2>
 
-      <div class="forecastList"></div>`;
+      <div class="forecastList"></div>
+      </div>`;
 
     const forecastList = forecastDisplay.querySelector(".forecastList");
 
@@ -73,16 +75,21 @@ const weather = {
         const icon = item.weather[0].icon;
         forecastItem.className = "forecastItem";
 
+
         forecastItem.innerHTML = `
           <div class="forecastDate">${formattedDate}</div>
-          <div class="forecastTemp">Temp: ${Math.round(item.main.temp)}°F</div>
+          <div class="forecastTemp">Temperature ${Math.round(item.main.temp)}°F</div>
           <div class="forecastDescription">${item.weather[0].description}</div>
           <img class="icon" src="http://openweathermap.org/img/w/${icon}.png" alt="${item.weather[0].description}">
-          <div class="humidityPer">Humidity: ${Math.round(item.main.humidity)}%</div>
-          <div class="wind">Wind Speed: ${Math.round(item.wind.speed)}mph</div>
+          <div class="humidityPer">Humidity ${Math.round(item.main.humidity)}%</div>
+          <div class="wind">Wind ${Math.round(item.wind.speed)} mph</div>
         `;
 
+
+
         forecastList.appendChild(forecastItem);
+
+
       }
     }
   },
