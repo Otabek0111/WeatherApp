@@ -138,6 +138,8 @@ button {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   background-color: var(--background-color);
+  text-transform: capitalize;
+
 }
 button:hover {
   background-color: #6888a3;
@@ -163,11 +165,7 @@ button:hover {
 }
 .sign {
 text-align: center;
-margin-bottom: 10px;
-padding-bottom: 20px;
-padding-top: 30px;
-/* align-self: flex-end; */
-
+padding-top: 30px; 
 }
 
 @media screen and (max-width: 800px) {
